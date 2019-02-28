@@ -1,26 +1,26 @@
-/* ************************************************************************ */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/14 15:40:08 by fguzman           #+#    #+#             */
-/*   Updated: 2019/02/27 22:13:12 by fguzman          ###   ########.fr       */
+/*   Created: 2019/02/26 23:48:36 by fguzman           #+#    #+#             */
+/*   Updated: 2019/02/27 21:50:20 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
-int	main(void)
+char	*ft_strchr(const char *s, int c)
 {
-	int len;
-	const char str[] = "http//www.tutorialspoint.com";
-	const char ch = ".";
-	char *ret;
-
-	ret = ft_strrchr(str, ch);
-	printf("string after |%c|is - |%s|\n", ch, ret);
-	return 0;
+	while (*s)
+	{
+		if (*s == c)
+			return ((char*)s);
+		s++;
+	}
+	if (*s == c)
+		return ((char*)s);
+	return (NULL);
 }
