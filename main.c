@@ -6,21 +6,28 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 15:40:08 by fguzman           #+#    #+#             */
-/*   Updated: 2019/02/27 22:19:54 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/02 19:03:39 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
-
-int	main(void)
+#include <stdio.h>
+#include <string.h>
+int main ()
 {
-	int len;
-	const char str[] = "http//www.tutorialspoint.com";
-	const char ch = '.';
-	char *ret;
+  char string[55] ="ABC_ABB_ABA_AAA_BAB_ACC_CCA";
+  char *p;
+  p = ft_strstr (string, "AAA");
+ 	
+ 	printf("this is the computers [%s]\n", strstr(string, "AAA"));
+  if(p)
+  	{
+		 printf("string found\n" );
+   		 printf ("First occurrence of string \"test\" in \"%s\" is"\
+           " \"%s\"",string, p);
 
-	ret = ft_strrchr(str, ch);
-	printf("string after |%c|is - |%s|\n", ch, ret);
+	}
+	else 
+		printf("string not found\n" );
 	return 0;
 }

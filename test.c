@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/27 23:37:29 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/03 20:15:12 by fguzman          ###   ########.fr       */
+/*   Created: 2019/03/02 18:49:01 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/02 18:51:28 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-char	*ft_strstr(const char *haystack, const char *needle)
+int main(int argc, char **argv)
 {
-	int i;
-	int p;
+	if (argc != 2)
+		return (0);
+	char str[10] = "thisisast";
 
-	i = 0;
-
-	if (*needle == '\0')
-		return ((char*)haystack);
-	while (haystack[i] != '\0')
-	{
-		p = 0;
-		while (haystack[i + p] == needle[p])
-		{
-			p++;
-			if (needle[p] == '\0')
-				return ((char*)&haystack[i]);
-		}
-		i++;
-	}
-	return (NULL);
+	printf("this is what I get -> [%s]\n", strstr(str,argv[1]));
+	return (0);
 }
