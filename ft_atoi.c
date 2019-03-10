@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/23 15:35:12 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/07 12:40:06 by fguzman          ###   ########.fr       */
+/*   Created: 2019/03/03 22:49:24 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/04 00:48:57 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strcat(char *s1, const char *s2)
+int	ft_atoi(const char *str)
 {
-	int l;
 	int i;
-	char *str;
-
+	int n;
+	int flag = 1;
 	i = 0;
-	l = 0;
-	str = s1;
-	while (s1[l] != '\0')
-		l++;
-	while (s2[i] != '\0')
-	{
-		s1[l] = s2[i];
+	while (str[i] == '\0' || str[i] == '\t' || str[i] == '\n' || str[i] == 
+			'\f' || str[i] == '\v' || str[i] == '\r' || str[i] == ' ')
 		i++;
-		l++;
+	n = 0;
+	if (str[i] == '-')
+	{
+		flag = -1;
+		i++;
 	}
-	s1[l] = '\0';
-	s1 = str;
-	return (s1);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		n = (n * 10) + (str[i] - '0');
+		i++;
+	}
+	return (n * flag);
 }

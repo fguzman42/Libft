@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/23 15:35:12 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/07 12:40:06 by fguzman          ###   ########.fr       */
+/*   Created: 2019/03/04 01:14:03 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/04 01:15:11 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+int	ft_tolower(int c)
 {
-	int l;
-	int i;
-	char *str;
-
-	i = 0;
-	l = 0;
-	str = s1;
-	while (s1[l] != '\0')
-		l++;
-	while (s2[i] != '\0')
-	{
-		s1[l] = s2[i];
-		i++;
-		l++;
-	}
-	s1[l] = '\0';
-	s1 = str;
-	return (s1);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }

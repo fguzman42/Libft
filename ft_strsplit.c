@@ -1,35 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/23 15:35:12 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/07 12:40:06 by fguzman          ###   ########.fr       */
+/*   Created: 2019/03/09 17:45:02 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/10 14:54:26 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+int strcounter(char const *s, char c)
 {
-	int l;
 	int i;
-	char *str;
-
+	int l;
+	int sc;
+	int cc;
 	i = 0;
-	l = 0;
-	str = s1;
-	while (s1[l] != '\0')
-		l++;
-	while (s2[i] != '\0')
+	sc = 0;
+	while (s[i])
 	{
-		s1[l] = s2[i];
+		if (s[i] != c)
+		{
+			l = i;
+			while (s[l] != c)
+				{
+					l++;
+					c++;
+					if (s[l] == c)
+					{
+						sc++;
+						i = l;
+					}
+				}
+		}
 		i++;
-		l++;
 	}
-	s1[l] = '\0';
-	s1 = str;
-	return (s1);
+	if (c == 0)
+		return 0;
+	return (sc);
 }
+/*
+int	main(void)
+{
+	char *s;
+	s = "1 2 3 4 5 6 7 8 9     ";
+	printf("the number of strings inside: %s is: %d\n", s, strcounter(s, 'a'));
+			return (0);
+}
+*/
