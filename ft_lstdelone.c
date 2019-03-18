@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   t_lstdelone.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 22:48:48 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/16 22:06:32 by fguzman          ###   ########.fr       */
+/*   Created: 2019/03/15 20:23:18 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/15 20:57:02 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+void	ft_lstdelone(t_list **alst, void (*del) (void *, size_t))
 {
-	char *string;
-
-	string = dst;
-	while (len > 0 && *src != '\0')
-	{
-		*string++ = *src++;
-		len--;
-	}
-	while (len > 0)
-	{
-		*string++ = '\0';
-		len--;
-	}
-	return (dst);
+	t_list *head;
+	head = *alst;
+	del(head->content, head->content_size);
+	free(*alst);
+	*alst = NULL;
 }

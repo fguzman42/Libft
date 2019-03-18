@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 22:48:48 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/16 22:06:32 by fguzman          ###   ########.fr       */
+/*   Created: 2019/03/16 17:07:34 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/16 18:39:43 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	char *string;
+	t_list	*container;
+	t_list	*remainder;
 
-	string = dst;
-	while (len > 0 && *src != '\0')
+	container = *alst;
+	while (container)
 	{
-		*string++ = *src++;
-		len--;
+		remainder = container->next;
+		del((container->content), (container->content_size));
+		free(container);
+		container = remainder;
 	}
-	while (len > 0)
-	{
-		*string++ = '\0';
-		len--;
-	}
-	return (dst);
+	*alst = NULL;
 }

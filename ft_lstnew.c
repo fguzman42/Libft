@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 22:48:48 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/16 22:06:32 by fguzman          ###   ########.fr       */
+/*   Created: 2019/03/14 14:41:56 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/15 00:40:07 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	char *string;
+	t_list	*link;
+;
+	if (!(link = (t_list*)malloc(sizeof(t_list) * content_size)))
+		return (NULL);
+	if (!content)
+	{
+		link->content = NULL;
+		link->content_size = 0;
+	}
+	else
+	{
+		if (!(link->content = (void *)malloc(content_size)))
+			return (NULL);
+		ft_memcpy(link->content, content, content_size);
+		link->content_size = content_size;
+	}
+	link->next = NULL;
+	return (link);
 
-	string = dst;
-	while (len > 0 && *src != '\0')
-	{
-		*string++ = *src++;
-		len--;
-	}
-	while (len > 0)
-	{
-		*string++ = '\0';
-		len--;
-	}
-	return (dst);
 }

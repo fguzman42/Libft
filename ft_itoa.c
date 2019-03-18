@@ -1,52 +1,59 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/09 17:45:02 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/17 18:18:57 by fguzman          ###   ########.fr       */
+/*   Created: 2019/03/12 17:00:46 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/17 18:43:50 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		wordlen(char const *s, char c)
+static int		numlen(int n)
 {
 	int i;
 
 	i = 0;
-	while (s[i] && s[i] != c)
+	if (n < 0)
 		i++;
+	if (n == 0)
+		return (1);
+	while (n)
+	{
+		n = n / 10;
+		i++;
+	}
 	return (i);
 }
 
-char			**ft_strsplit(const char *s, char c)
+char			*ft_itoa(int n)
 {
-	int		l;
-	int		a;
-	int		skip;
-	char	**str;
+	char	*str;
+	int		i;
+	int		p;
 
-	a = 0;
-	l = 0;
-	skip = -1;
-	if (!s || !(str = (char **)malloc(sizeof(char *) * ft_wordcount(s, c) + 1)))
+	p = 1;
+	i = numlen(n);
+	if (n == 0)
+		return (ft_strdup("0"));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (!(str = (char *)malloc(sizeof(char) * numlen(n) + 1)))
 		return (NULL);
-	while (s[++skip])
+	if (n < 0)
 	{
-		str[a] = (char *)malloc(sizeof(char) * wordlen(&s[skip], c) + 1);
-		while (s[skip] != c)
-		{
-			str[a][l++] = s[skip++];
-			if (s[skip] == c)
-			{
-				str[a++][l] = '\0';
-				l = 0;
-			}
-		}
+		n = n * -1;
+		str[0] = '-';
 	}
-	str[a] = NULL;
+	while (n != 0)
+	{
+		str[i - p] = '0' + (n % 10);
+		n = n / 10;
+		p++;
+	}
+	str[i] = '\0';
 	return (str);
 }

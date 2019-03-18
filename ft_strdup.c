@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 18:30:04 by fguzman           #+#    #+#             */
-/*   Updated: 2019/02/21 22:06:46 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/16 21:57:18 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strdup(const char *s1)
 {
-	int i;
-	size_t len;
-	char *string;
+	int		i;
+	size_t	len;
+	char	*string;
 
 	i = 0;
 	len = ft_strlen(s1);

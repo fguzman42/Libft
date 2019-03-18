@@ -6,11 +6,11 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 19:16:06 by fguzman           #+#    #+#             */
-/*   Updated: 2019/02/23 20:32:16 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/16 22:04:08 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcpy(char *s1, char *s2)
+char	*ft_strcpy(char *s1, char *s2)
 {
 	int i;
 
@@ -21,5 +21,5 @@ char *ft_strcpy(char *s1, char *s2)
 		i++;
 	}
 	s1[i] = '\0';
-	return s1;
+	return (s1);
 }

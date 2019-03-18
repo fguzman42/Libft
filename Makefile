@@ -6,7 +6,7 @@ SRCS = ft_*.c
 	   
 OBJ = $(SRCS:%.c=%.o)
 
-$(NAME):
+$(NAME): $(SRCS)
 	$(CC) $(CFLAGS) $(SRCS)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)

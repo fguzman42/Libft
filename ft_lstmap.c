@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 22:48:48 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/16 22:06:32 by fguzman          ###   ########.fr       */
+/*   Created: 2019/03/16 19:58:19 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/16 20:20:06 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	char *string;
+	t_list	*list;
+	t_list	*new;
 
-	string = dst;
-	while (len > 0 && *src != '\0')
+	if (!lst)
+		return NULL;
+	list = f(lst);
+	new = list;
+	while (lst->next)
 	{
-		*string++ = *src++;
-		len--;
+		lst = lst->next;
+		if (!(list->next = f(lst)))
+		{
+			free (list->next);
+			return (NULL);
+		}
+		list = list->next;
 	}
-	while (len > 0)
-	{
-		*string++ = '\0';
-		len--;
-	}
-	return (dst);
+	return (new);
 }

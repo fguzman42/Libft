@@ -6,18 +6,19 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 18:49:32 by fguzman           #+#    #+#             */
-/*   Updated: 2019/02/11 19:15:19 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/16 21:56:06 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *c)
+int	ft_strlen(char *c)
 {
 	int i;
+
 	i = 0;
-		while (*c  != '\0')
-		{
-			i++;
-			c++;
-		}		
-	return i;
+	while (*c != '\0')
+	{
+		i++;
+		c++;
+	}
+	return (i);
 }
