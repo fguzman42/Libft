@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 11:31:56 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/17 18:40:20 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/17 21:38:50 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n >= 10)
 	{
 		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
 }

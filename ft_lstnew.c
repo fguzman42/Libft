@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 14:41:56 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/15 00:40:07 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/17 21:22:48 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*link;
-;
+
 	if (!(link = (t_list*)malloc(sizeof(t_list) * content_size)))
 		return (NULL);
 	if (!content)
@@ -32,5 +32,4 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	link->next = NULL;
 	return (link);
-
 }

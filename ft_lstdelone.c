@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 20:23:18 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/15 20:57:02 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/17 18:50:02 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_lstdelone(t_list **alst, void (*del) (void *, size_t))
 {
 	t_list *head;
+
 	head = *alst;
 	del(head->content, head->content_size);
 	free(*alst);
