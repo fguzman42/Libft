@@ -6,7 +6,7 @@
 #    By: fguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/19 14:43:58 by fguzman           #+#    #+#              #
-#    Updated: 2019/03/19 15:16:23 by fguzman          ###   ########.fr        #
+#    Updated: 2019/03/19 15:26:42 by fguzman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS = 	ft_putstr_fd.c ft_strcat.c ft_strchr.c ft_atoi.c ft_strclr.c ft_bzero.c 
 		ft_putnbr.c	ft_wordcount.c ft_putnbr_fd.c ft_putstr.c
 OBJ = $(SRCS:%.c=%.o)
 
-$(NAME): $(SRCS)
+$(NAME):
 	$(CC) $(CFLAGS) $(SRCS)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
