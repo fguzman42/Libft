@@ -6,7 +6,7 @@
 #    By: fguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/19 15:43:44 by fguzman           #+#    #+#              #
-#    Updated: 2019/03/19 16:36:29 by fguzman          ###   ########.fr        #
+#    Updated: 2019/03/19 16:39:28 by fguzman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ clean:
 	$(RM) $(OBJ)
 
 fclean:	clean	
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
