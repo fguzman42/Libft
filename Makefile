@@ -3,7 +3,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I. -c
 RM = rm -f
 SRCS = ft_*.c 
-	   
+
 OBJ = $(SRCS:%.c=%.o)
 
 $(NAME): $(SRCS)
