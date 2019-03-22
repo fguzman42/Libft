@@ -6,13 +6,13 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/09 17:45:02 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/22 16:33:46 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/22 16:36:31 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		wordlen (char *s, char c)
+int		wordlen(char *s, char c)
 {
 	int i;
 
