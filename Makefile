@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: phtruong <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: fguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/11/05 21:46:13 by phtruong          #+#    #+#              #
-#    Updated: 2019/03/05 18:43:41 by phtruong         ###   ########.fr        #
+#    Created: 2019/03/19 15:43:44 by fguzman           #+#    #+#              #
+#    Updated: 2019/03/22 15:29:46 by fguzman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,12 @@ CFLAGS = -Werror -Wall -Wextra -I. -c
 OBJ = *.o
 SRC = ft_atoi.c \
 	  ft_bzero.c \
-	  ft_hialpha.c \
 	  ft_isalnum.c \
 	  ft_isalpha.c \
 	  ft_isascii.c \
 	  ft_isdigit.c \
 	  ft_isprint.c \
-	  ft_isspace.c \
 	  ft_itoa.c \
-	  ft_loalpha.c \
 	  ft_lstadd.c \
 	  ft_lstdel.c \
 	  ft_lstdelone.c \
@@ -49,11 +46,9 @@ SRC = ft_atoi.c \
 	  ft_putstr_fd.c \
 	  ft_strcat.c \
 	  ft_strchr.c \
-	  ft_strchr_nchr.c \
 	  ft_strclr.c \
 	  ft_strcmp.c \
 	  ft_strcpy.c \
-	  ft_strcspn.c \
 	  ft_strdel.c \
 	  ft_strdup.c \
 	  ft_strequ.c \
@@ -69,19 +64,15 @@ SRC = ft_atoi.c \
 	  ft_strncpy.c \
 	  ft_strnequ.c \
 	  ft_strnew.c \
-	  ft_strnlen.c \
 	  ft_strnstr.c \
 	  ft_strrchr.c \
 	  ft_strsplit.c \
-	  ft_strspn.c \
 	  ft_strstr.c \
 	  ft_strsub.c \
-	  ft_strtok.c \
-	  ft_strtok_ntokens.c \
-	  ft_strtok_r.c \
 	  ft_strtrim.c \
 	  ft_tolower.c \
 	  ft_toupper.c \
+	  ft_wordcount.c \
 
 all:	$(NAME)
 
