@@ -6,7 +6,7 @@
 #    By: fguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/19 15:43:44 by fguzman           #+#    #+#              #
-#    Updated: 2019/03/22 15:27:19 by fguzman          ###   ########.fr        #
+#    Updated: 2019/03/22 15:29:46 by fguzman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ SRC = ft_atoi.c \
 	  ft_isascii.c \
 	  ft_isdigit.c \
 	  ft_isprint.c \
-	  ft_isspace.c \
 	  ft_itoa.c \
 	  ft_lstadd.c \
 	  ft_lstdel.c \
@@ -50,7 +49,6 @@ SRC = ft_atoi.c \
 	  ft_strclr.c \
 	  ft_strcmp.c \
 	  ft_strcpy.c \
-	  ft_strcspn.c \
 	  ft_strdel.c \
 	  ft_strdup.c \
 	  ft_strequ.c \
