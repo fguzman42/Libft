@@ -6,7 +6,7 @@
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 14:40:25 by phtruong          #+#    #+#             */
-/*   Updated: 2019/03/22 16:22:22 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/22 16:33:54 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char				*ft_strtok(char *str, const char *sep);
 char				*ft_strtok_r(char *s, char const *delim, char **save_ps);
 int					ft_strtok_ntokens(char const *str, char const *c);
 int					ft_strchr_nchr(char const *str, int c);
-int					ft_wordcount(const char *s, char c);
+int					ft_wordcount(char *s, char c);
 /*
 ** Ctype lib
 */
