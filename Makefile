@@ -6,13 +6,13 @@
 #    By: fguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/19 15:43:44 by fguzman           #+#    #+#              #
-#    Updated: 2019/03/21 22:24:26 by fguzman          ###   ########.fr        #
+#    Updated: 2019/03/22 15:03:49 by fguzman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-INC = ./
+INC = -I
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -74,7 +74,7 @@ LIBC =	ft_atoi.c \
 		ft_strtrim.c \
 		ft_tolower.c \
 		ft_toupper.c \
-		ft_wordcount.c 
+		ft_wordcount.c \ 
 
 OBJ = ft_*.o
 
@@ -82,9 +82,9 @@ OBJ = ft_*.o
 all: $(NAME)
 
 $(NAME):
-		gcc -c $(FLAGS) -I$(INC) $(LIBC)
+		gcc -c $(FLAGS) $(INC) $(LIBC)
 		ar rc $(NAME) $(OBJ)
-		ranlib $(NAME)
+
 clean: 
 		rm -f $(OBJ)
 		
