@@ -3,28 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 14:02:33 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/17 00:24:41 by fguzman          ###   ########.fr       */
+/*   Created: 2019/02/18 20:33:48 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/25 08:51:05 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** DESCRIPTION
+** Allocates w/ malloc() and returns a fresh string ending with '\0',
+** result of the concatenation of s1 and s2. If allocation fails, return NULL.
+** RETURN VALUES
+** The fresh string result of concatenation of 2 strings.
+*/
+
+/*
+** PSEUDOCODE
+** Initialize pointer
+** Check if s1 and s2 for NULL
+** Set pointer to new string with len of s1 and s2;
+** Protect malloc return
+** Copy s1 to pointer
+** Append s2 to pointer with ft_strcat
+** Copy over to pointer
+** Return pointer.
+*/
 
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	char	*str;
+	char	*str_join;
 
-	if (s1 == 0 || s2 == 0)
+	if (!s1 || !s2)
 		return (NULL);
-	if (!(str = (char *)ft_memalloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
-		return (0);
-	i = 0;
-	while (*s1)
-		str[i++] = *s1++;
-	while (*s2)
-		str[i++] = *s2++;
-	return (str);
+	str_join = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
+	if (!str_join)
+		return (NULL);
+	ft_strcpy(str_join, s1);
+	ft_strcat(str_join, s2);
+	return (str_join);
 }

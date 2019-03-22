@@ -3,18 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/14 15:46:23 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/19 16:06:01 by fguzman          ###   ########.fr       */
+/*   Created: 2019/02/16 11:19:48 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/16 15:22:56 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** DESCRIPTION
+** Checks for any printing characters, including space.
+** RETURN VALUES
+** Non-zero for true, 0 for false
+*/
 
 #include "libft.h"
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	return (c >= 32 && c <= 126);
 }

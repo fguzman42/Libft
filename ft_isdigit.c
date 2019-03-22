@@ -3,18 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 20:04:53 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/19 16:05:44 by fguzman          ###   ########.fr       */
+/*   Created: 2019/02/16 09:42:24 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/16 11:08:10 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** DESCRIPTION
+** Checks if character is digit.
+** RETURN VALUES
+** 1 for true, 0 for false.
+*/
 
 #include "libft.h"
 
 int	ft_isdigit(int c)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	return (c >= '0' && c <= '9');
 }

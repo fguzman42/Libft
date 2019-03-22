@@ -3,19 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/05 22:51:16 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/21 19:46:41 by fguzman          ###   ########.fr       */
+/*   Created: 2019/02/18 12:15:23 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/21 20:38:04 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*
+** DESCRIPTION
+** Applies the function f to each character of the string passed as argument.
+** Each character is passed by address to f to be modified if necessary.
+** RETURN VALUES
+** None.
+*/
 
-void	ft_striter(char *s, void (f)(char *))
+/*
+** PSEUDOCODE
+** Initialize index i
+** If string and address f is not NULL, while string is not NULL,
+** Apply f to each character of s.
+*/
+
+void	ft_striter(char *s, void (*f)(char *))
 {
-	if (s == '\0' || f == '\0')
-		return ;
-	while (s != '\0' && *s)
-		f(s++);
+	if (s && f)
+		while (*s)
+			f(s++);
 }

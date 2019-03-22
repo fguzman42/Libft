@@ -3,12 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/16 19:31:44 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/19 16:06:55 by fguzman          ###   ########.fr       */
+/*   Created: 2019/02/24 15:30:37 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/24 15:32:24 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** DESCRIPTION
+** Iterates through list and applies function f to each link
+*/
 
 #include "libft.h"
 

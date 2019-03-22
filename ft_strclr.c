@@ -3,23 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/05 22:35:55 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/19 16:10:38 by fguzman          ###   ########.fr       */
+/*   Created: 2019/02/18 10:44:50 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/18 12:00:30 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** DESCRIPTION
+** Sets every character of the string to the value of '\0'
+*/
+
+/*
+** PSEUDOCODE
+** If string is not NULL, then use ft_memset to set '\0' with len of string.
+*/
 
 #include "libft.h"
 
 void	ft_strclr(char *s)
 {
-	int i;
-
-	i = 0;
 	if (s)
-	{
-		while (s[i])
-			s[i++] = '\0';
-	}
+		ft_memset(s, '\0', ft_strlen(s));
 }

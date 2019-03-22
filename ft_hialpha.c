@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_hialpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/18 09:48:36 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/18 10:15:57 by phtruong         ###   ########.fr       */
+/*   Created: 2019/02/16 11:35:13 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/16 15:21:21 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Takes as a parameter the address of a memory area that needs to be freed
-** with free(), the puts the pointer to NULL.
-*/
-
-/*
-** PSEUDOCODE
-** Checks if address is NULL, if so do nothing.
-** Free address pointer with free then set it to NULL
+** DESCRIPTION
+** Checks for upper-case
+** RETURN VALUES
+** 1 for true, 0 otherwise
 */
 
 #include "libft.h"
 
-void	ft_memdel(void **ap)
+int	ft_hialpha(int c)
 {
-	if (!ap)
-		return ;
-	free(*ap);
-	*ap = NULL;
+	int n;
+
+	n = (c >= 65 && c <= 90) ? 1 : 0;
+	return (n);
 }

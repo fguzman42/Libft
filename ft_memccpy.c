@@ -3,33 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/17 20:16:20 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/19 16:07:34 by fguzman          ###   ########.fr       */
+/*   Created: 2019/02/13 08:12:11 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/16 13:17:33 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** DESCRIPTION
+** The memccpy() function copies bytes from string src to string dst.
+** If the character c (as converted to an unsigned char) occurs in the str src,
+** the copy stops and a pointer to the byte after the copy of c in the
+** str dst is returned.
+** Otherwise, n bytes are copied, and a NULL pointer is returned.
+**
+** The src and dst strings should not overlap, as the behavior is undefined.
+*/
 
 #include "libft.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t			i;
-	unsigned char	*cdst;
-	unsigned char	*csrc;
-	unsigned char	a;
+	unsigned char		*dest;
+	const unsigned char	*source;
 
-	i = 0;
-	cdst = (unsigned char*)dst;
-	csrc = (unsigned char*)src;
-	a = (unsigned char)c;
-	while (n > 0)
+	dest = dst;
+	source = src;
+	while (n--)
 	{
-		cdst[i] = csrc[i];
-		if (csrc[i] == a)
-			return (&cdst[i + 1]);
-		i++;
-		n = n - 1;
+		if ((*dest++ = *source++) == (unsigned char)c)
+			return (dest);
 	}
 	return (NULL);
 }

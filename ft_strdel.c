@@ -3,12 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/05 22:30:22 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/19 16:11:06 by fguzman          ###   ########.fr       */
+/*   Created: 2019/02/18 10:36:57 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/18 10:42:21 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** DESCRIPTION
+** Takes as a parameter the address of a string that needs to be freed
+** with free(), the set its pointer to NULL.
+** RETURN VALUES
+** none
+*/
+
+/*
+** PSEUDOCODE
+** If as is not NULL, then free address.
+*/
 
 #include "libft.h"
 
@@ -17,6 +30,6 @@ void	ft_strdel(char **as)
 	if (as)
 	{
 		free(*as);
-		*as = NULL;
+		*as = 0;
 	}
 }
