@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 21:00:37 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/19 16:09:07 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/21 20:06:55 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	unsigned char cc;
+
+	cc = (unsigned char) c;
+	write(fd, &cc, 1);
 }

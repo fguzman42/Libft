@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/13 20:56:19 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/21 20:08:28 by fguzman          ###   ########.fr       */
+/*   Created: 2019/03/21 18:40:14 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/21 19:53:03 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	ft_putendl(char const *s)
+int main(void)
 {
-	if (!s)
-		return ;
-	ft_putstr(s);
-	write(1, "\n", 1);
+	int s;
+
+	s = ft_strequ("abc", "ab");
+	printf("is this string equal?: %d", s);
+	return (0);
 }

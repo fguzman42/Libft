@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 11:28:25 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/19 16:09:23 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/21 20:09:29 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(const char *s, int fd)
 {
+	if (!s || !fd)
+		return ;
 	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }
