@@ -3,57 +3,75 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/12 17:00:46 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/21 14:28:14 by fguzman          ###   ########.fr       */
+/*   Created: 2019/02/21 16:26:06 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/24 13:05:38 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** DESCRIPTION
+** Allocate (with malloc(3)) and returns a “fresh” string end- ing with ’\0’
+** representing the integer n given as argument.
+** Negative numbers must be supported.
+** If the allocation fails, the function returns NULL.
+** RETURN VALUES
+** The string representing the integer passed as argument.
+*/
+
+/*
+** PSEUDOCODE
+** Initialize pointer, index, len
+** Handle base case for min int
+** Find len of int
+** Malloc pointer with len of int using ft_strnew()
+** Protect malloc return
+** Null terminate last index of pointer
+** If n is negative, first index is '-'
+** While dividing n by 10, set last index to n % 10 + '0'
+** Return pointer
+*/
+
 #include "libft.h"
 
-static int		numlen(int n)
+static int	int_len(int n)
 {
-	int i;
+	int	c;
 
-	i = 0;
-	if (n < 0)
-		i++;
+	c = 0;
 	if (n == 0)
 		return (1);
 	while (n)
 	{
-		n = n / 10;
-		i++;
+		n /= 10;
+		c++;
 	}
-	return (i);
+	return (c);
 }
 
-char			*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*str;
-	int		i;
-	int		p;
+	int		sign;
+	int		len;
+	int		n_copy;
 
-	p = 1;
-	i = numlen(n);
-	if (n == 0)
-		return (ft_strdup("0"));
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	if (!(str = (char *)malloc(sizeof(char) * numlen(n) + 1)))
-		return (NULL);
-	if (n < 0)
+	sign = (n < 0) ? 1 : 0;
+	len = int_len(n);
+	if (!(str = ft_strnew(len + sign)))
+		return (0);
+	str[len] = '\0';
+	n_copy = (n < 0) ? -n : n;
+	len = (n < 0) ? len + 1 : len;
+	while (--len >= 0)
 	{
-		n = n * -1;
+		str[len] = n_copy % 10 + '0';
+		n_copy /= 10;
+	}
+	if (sign)
 		str[0] = '-';
-	}
-	while (n != 0)
-	{
-		str[i - p] = '0' + (n % 10);
-		n = n / 10;
-		p++;
-	}
-	str[i] = '\0';
 	return (str);
 }
