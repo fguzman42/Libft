@@ -3,18 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/13 20:42:40 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/22 10:59:01 by fguzman          ###   ########.fr       */
+/*   Created: 2019/02/20 12:13:34 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/20 12:23:01 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** DESCRIPTION
+** Outputs the string s to standard output
+*/
+
 #include "libft.h"
 
-void	ft_putstr(char const  *s)
+void	ft_putstr(char const *s)
 {
-	if (!s)
-		return ;
-	write(1, s, ft_strlen(s));
+	if (s)
+		ft_putstr_fd(s, 1);
 }

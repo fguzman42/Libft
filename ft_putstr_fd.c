@@ -3,25 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/14 11:15:45 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/21 20:30:28 by fguzman          ###   ########.fr       */
+/*   Created: 2019/02/20 12:05:37 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/20 12:23:42 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** DESCRIPTION
+** Outputs the char c to the file descriptor fd.
+*/
 
 #include "libft.h"
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	int	i;
-
-	if (!s || !fd)
+	if (!s)
 		return ;
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	while (*s)
+		ft_putchar_fd(*s++, fd);
 }

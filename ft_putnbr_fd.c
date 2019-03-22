@@ -3,30 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/14 11:31:56 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/21 20:24:40 by fguzman          ###   ########.fr       */
+/*   Created: 2019/02/20 13:20:25 by phtruong          #+#    #+#             */
+/*   Updated: 2019/02/24 16:43:09 by phtruong         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** DESCRIPTION
+** Outputs the integer n to the file descriptor fd.
+*/
+
+/*
+** PSEUDOCODE
+** Check for negative cases
+** If n = int_min value
+** |--> ft_putstr_fd(int_min value)
+** If negative,
+** |--> output negative symbol, then set n to negative
+** If n is between 0 and 9 inclusively,
+** |--> output the number.
+** If n is 10 and above
+** |--> Recall function with n/10
+** |--> Recall funciton with n%10
+*/
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long num;
-
-	num = n;
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		num *= -1;
-	}
-	if (num > 9)
-	{
-		ft_putnbr_fd(num / 10, fd);
-		ft_putnbr_fd(num % 10, fd);
-	}
-	else
-		ft_putchar_fd(num + '0', fd);
+	if (n == -2147483648)
+		return (ft_putstr_fd("-2147483648", fd));
+	ft_putstr_fd(ft_itoa(n), fd);
 }
