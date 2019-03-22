@@ -6,7 +6,7 @@
 #    By: phtruong <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/05 21:46:13 by phtruong          #+#    #+#              #
-#    Updated: 2019/03/05 18:43:41 by phtruong         ###   ########.fr        #
+#    Updated: 2019/03/22 16:25:20 by fguzman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,6 +82,7 @@ SRC = ft_atoi.c \
 	  ft_strtrim.c \
 	  ft_tolower.c \
 	  ft_toupper.c \
+	  ft_wordcount.c \
 
 all:	$(NAME)
 
