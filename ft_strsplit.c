@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/09 17:45:02 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/19 16:13:37 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/21 14:22:34 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,22 @@ char			**ft_strsplit(const char *s, char c)
 
 	a = 0;
 	l = 0;
-	skip = -1;
-	if (!s || !(str = (char **)malloc(sizeof(char *) * ft_wordcount(s, c) + 1)))
+	skip = 0;
+	if (!s ||
+		!(str = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1))))
 		return (NULL);
-	while (s[++skip])
+	while (s[skip])
 	{
-		str[a] = (char *)malloc(sizeof(char) * wordlen(&s[skip], c) + 1);
-		while (s[skip] != c)
+		str[a] = (char *)malloc(sizeof(char) * (wordlen(&s[skip], c) + 1));
+		while (s[skip] != c && s[skip] != '\0')
 		{
 			str[a][l++] = s[skip++];
-			if (s[skip] == c)
-			{
+			if (s[skip] == c || s[skip] == '\0')
 				str[a++][l] = '\0';
-				l = 0;
-			}
+			l = ((s[skip] == c || s[skip] == '\0') ? 0 : l);
 		}
+		skip += (s[skip] == '\0' ? 0 : 1);
 	}
-	str[a] = NULL;
+	str[a] = (NULL);
 	return (str);
 }

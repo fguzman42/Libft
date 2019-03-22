@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 15:35:45 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/19 18:00:39 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/19 18:21:07 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ void				ft_lstiter(t_list *lst, void (f)(t_list *elem));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del) (void *, size_t));
-void				*ftlstnew(void const *content, size_t content_size);
+t_list				*ft_lstnew(void const *content, size_t content_size);
 
+void				*ft_memchr(const void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memset(void *b, int c, size_t len);
 int					ft_isprint(int c);
