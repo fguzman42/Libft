@@ -6,13 +6,13 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 22:32:03 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/21 19:07:55 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/22 11:06:07 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(char const *s1, char const *s2, size_t n)
 {
 	int i;
 
