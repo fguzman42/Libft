@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 15:35:45 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/22 15:18:36 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/22 15:22:32 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-#include <stdio.h>
+# include <stdio.h>
 
 typedef struct		s_list
 {
@@ -88,10 +88,11 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
+
 /*
 ** below are my bonus functions
 */
 
 int					ft_wordcount(const char *s, char c);
-#endif
 
+#endif
