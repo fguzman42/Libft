@@ -6,7 +6,7 @@
 #    By: fguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/19 15:43:44 by fguzman           #+#    #+#              #
-#    Updated: 2019/03/21 21:09:30 by fguzman          ###   ########.fr        #
+#    Updated: 2019/03/21 22:03:46 by fguzman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,7 @@ OBJ = ft_*.o
 all: $(NAME)
 
 $(NAME):
-		gcc -c $(FLAGS) -I$(INC) $(LIBC) $(ADDITIONAL) $(LISTS)
+		gcc -c $(FLAGS) -I$(INC) $(LIBC)
 		ar rc $(NAME) $(OBJ)
 		ranlib $(NAME)
 clean: 
