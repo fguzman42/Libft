@@ -6,14 +6,14 @@
 #    By: fguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/19 15:43:44 by fguzman           #+#    #+#              #
-#    Updated: 2019/03/22 15:07:26 by fguzman          ###   ########.fr        #
+#    Updated: 2019/03/22 15:11:53 by fguzman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 FLAGS = -Wall -Wextra -Werror -I. -c
-
+OBJ = ft_*.o
 LIBC =	ft_atoi.c \
 		ft_bzero.c \
 		ft_isalnum.c \
@@ -73,9 +73,6 @@ LIBC =	ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c \
 		ft_wordcount.c \ 
-
-OBJ = ft_*.o
-
 
 all: $(NAME)
 
