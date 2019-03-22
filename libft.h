@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 15:35:45 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/22 14:56:03 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/22 15:07:50 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct		s_list
 /*
 ** list functions
 */
+
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstiter(t_list *lst, void (f)(t_list *elem));
 void				ft_lstadd(t_list **alst, t_list *new);

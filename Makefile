@@ -6,15 +6,13 @@
 #    By: fguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/19 15:43:44 by fguzman           #+#    #+#              #
-#    Updated: 2019/03/22 15:03:49 by fguzman          ###   ########.fr        #
+#    Updated: 2019/03/22 15:07:26 by fguzman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-INC = -I
-
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -I. -c
 
 LIBC =	ft_atoi.c \
 		ft_bzero.c \
@@ -82,7 +80,7 @@ OBJ = ft_*.o
 all: $(NAME)
 
 $(NAME):
-		gcc -c $(FLAGS) $(INC) $(LIBC)
+		gcc $(FLAGS) $(LIBC)
 		ar rc $(NAME) $(OBJ)
 
 clean: 
