@@ -3,46 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/15 15:44:18 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/15 20:34:26 by phtruong         ###   ########.fr       */
+/*   Created: 2019/03/03 16:22:54 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/21 19:08:58 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** DESCRIPTION
-** strnstr() locates the first occurrence of the null-terminated string find
-** in the string str, where not more than len characters are searched.
-** Characters that appear after a '\0' are not searched.
-** RETURN VALUES
-** If find is an empty string, str is returned; if find is not found, returns
-** NULL; otherwise return pointer to the first character found.
-*/
-
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *find, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	str_len;
-	size_t	find_len;
-	size_t	n;
+	int i;
+	int p;
 
-	str_len = ft_strlen(str);
-	find_len = ft_strlen(find);
-	n = len - find_len;
-	if (!*find)
-		return (char *)str;
-	if (!find_len)
-		return (char *)str;
-	if (find_len > len || str_len < find_len)
-		return (NULL);
-	if (!ft_memcmp(str, find, find_len))
-		return (char *)str;
-	while (n--)
+	i = 0;
+	p = 0;
+	if (*needle == '\0')
+		return ((char *)haystack);
+	while (haystack[i] != '\0' && len > 0)
 	{
-		if (ft_memcmp(++str, find, find_len) == 0)
-			return (char *)str;
+		while (haystack[i + p] == needle[p] && len > 0)
+		{
+			p++;
+			len--;
+			if (needle[p] == '\0')
+				return ((char *)&haystack[i]);
+		}
+		i++;
+		len--;
 	}
 	return (NULL);
 }

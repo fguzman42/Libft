@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   isascii.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/16 11:13:03 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/16 15:24:26 by phtruong         ###   ########.fr       */
+/*   Created: 2019/02/14 14:49:44 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/19 16:05:24 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** DESCRIPTION
-** Checks for ascii characters
-** RETURN VALUES
-** 1 for true, 0 for false.
-*/
 
 #include "libft.h"
 
 int	ft_isascii(int c)
 {
-	return (c >= 0 && c <= 127);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

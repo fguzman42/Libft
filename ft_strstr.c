@@ -3,43 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 19:15:18 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/15 14:32:20 by phtruong         ###   ########.fr       */
+/*   Created: 2019/02/27 23:37:29 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/19 16:13:45 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** DESCRIPTION
-** strstr() locates the first occurence of null-terminated string find
-** in null-terminated string str.
-** RETURN VALUES
-** If find is empty, str is returned; if find is not found, NULL is returned.
-** Otherwise, pointer to the first character of first occurence of find
-** is returned.
-*/
-
 #include "libft.h"
 
-char	*ft_strstr(const char *str, const char *find)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	size_t	str_len;
-	size_t	find_len;
+	int i;
+	int p;
 
-	find_len = ft_strlen(find);
-	str_len = ft_strlen(str);
-	if (!*find)
-		return (char *)str;
-	str = ft_strchr(str, find[0]);
-	if (str == NULL || find[1] == '\0')
-		return (char *)str;
-	if (str_len < find_len)
-		return (NULL);
-	if (ft_memcmp(str, find, find_len) == 0)
-		return (char *)str;
-	while (*str++)
-		if (!ft_memcmp(str, find, find_len))
-			return (char *)str;
-	return (0);
+	i = 0;
+	if (*needle == '\0')
+		return ((char*)haystack);
+	while (haystack[i] != '\0')
+	{
+		p = 0;
+		while (haystack[i + p] == needle[p])
+		{
+			p++;
+			if (needle[p] == '\0')
+				return ((char*)&haystack[i]);
+		}
+		i++;
+	}
+	return (NULL);
 }

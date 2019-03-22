@@ -3,33 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 18:16:52 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/13 14:00:53 by phtruong         ###   ########.fr       */
+/*   Created: 2019/02/11 18:49:32 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/19 17:59:44 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** DESCRIPTION
-** The strlen() function computes the length of the string s.
-** The strnlen() function attempts to compute the length of s,
-** but never scans beyond the first maxlen bytes of s.
-** RETURN VALUES
-** The strlen() function returns the number of characters that precede
-** the terminating NUL character.
-** The strnlen() function returns either the same result as strlen()
-** or maxlen, whichever is smaller.
-*/
-
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *c)
 {
-	size_t c;
+	int i;
 
-	c = 0;
-	while (str[c] != '\0')
+	i = 0;
+	while (*c != '\0')
+	{
+		i++;
 		c++;
-	return (c);
+	}
+	return (i);
 }

@@ -3,27 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/14 10:16:20 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/14 11:25:18 by phtruong         ###   ########.fr       */
+/*   Created: 2019/02/23 15:35:12 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/19 16:10:16 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** DESCRIPTION
-** strcat() appends a copy of the null-terminated str s2 to the end of str s1
-** RETURN VALUES
-** strcat() returns the pointer s1.
-*/
 
 #include "libft.h"
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	size_t n;
+	int		l;
+	int		i;
+	char	*str;
 
-	n = ft_strlen(s1);
-	ft_strcpy(s1 + n, s2);
+	i = 0;
+	l = 0;
+	str = s1;
+	while (s1[l] != '\0')
+		l++;
+	while (s2[i] != '\0')
+	{
+		s1[l] = s2[i];
+		i++;
+		l++;
+	}
+	s1[l] = '\0';
+	s1 = str;
 	return (s1);
 }

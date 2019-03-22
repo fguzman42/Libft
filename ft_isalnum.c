@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   isalnum.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/16 10:32:46 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/16 15:21:55 by phtruong         ###   ########.fr       */
+/*   Created: 2019/02/14 08:35:02 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/19 16:03:51 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** DESCRIPTION
-** Checks if isalpha or isnum true
-** RETURN VALUES
-** 1 for true, 0 for false.
-*/
 
 #include "libft.h"
 
 int	ft_isalnum(int c)
 {
-	int n;
-
-	n = (ft_isalpha(c) || ft_isdigit(c)) ? 1 : 0;
-	return (n);
+	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	else
+		return (0);
 }

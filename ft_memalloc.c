@@ -3,39 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phtruong <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/18 09:18:28 by phtruong          #+#    #+#             */
-/*   Updated: 2019/02/21 20:35:57 by phtruong         ###   ########.fr       */
+/*   Created: 2019/03/04 01:18:52 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/19 16:07:22 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** DESCRIPTION
-** Allocates (with malloc()) and returns a "fresh" memory area.
-** The memory allocated is initilaized to 0.
-** If the allocation fails, the function returns NULL.
-** RETURN VALUES
-** The allocated memory area.
-*/
-
-/*
-** PSEUDOCODE
-** Initilize pointer -> set pointer to malloc w/ length of size.
-** If size is 0 then return NULL
-** Put zero bytes in allocated memory. Use ft_bzero.
-** Return pointer.
-*/
 
 #include "libft.h"
 
 void	*ft_memalloc(size_t size)
 {
-	unsigned int	*slot;
+	void *str;
 
-	slot = (unsigned int *)malloc(size);
-	if (!slot)
+	if (!(str = (void*)malloc(size)))
 		return (NULL);
-	ft_bzero(slot, size);
-	return (slot);
+	ft_bzero(str, size);
+	return (str);
 }
