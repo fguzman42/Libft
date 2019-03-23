@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 15:35:45 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/22 17:42:15 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/22 17:57:27 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 ** Bonus Functions
 */
 
-int					ft_wordcount(const char *s, char c);
+//int					ft_wordcount(const char *s, char c);
 
 #endif
