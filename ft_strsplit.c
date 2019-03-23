@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/09 17:45:02 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/22 18:39:54 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/22 18:41:11 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,3 +77,5 @@ char			**ft_strsplit(char const *s, char c)
 	return (str);
 }
 */
+int main(void)
+{}
