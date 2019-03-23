@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/09 17:45:02 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/22 18:42:48 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/22 18:44:11 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ char			**ft_strsplit(char const *s, char c)
 	char	**str;
 
 	a = 0;
-	l = 3;
+	l = 0;
 	skip = 0;
 	if (!s)
 		return(NULL);
-	if(!(str = (char **)malloc(sizeof(char *) * (ft_wordcount(s, c) + 1))))
+	if(!(str = (char **)malloc(sizeof(char *) * (1))))
 		return (NULL);
 	while (s[skip])
 	{
