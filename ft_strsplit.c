@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/09 17:45:02 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/22 17:56:57 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/22 18:16:21 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int		wordlen(char const *s, char c)
 	return (i);
 }
 
-static int	ft_wordcount(const char *s, char c)
+static int		ft_wordcount(char const *s, char c)
 {
 	int wc;
 	int i;
@@ -46,7 +46,7 @@ static int	ft_wordcount(const char *s, char c)
 	return (wc);
 }
 
-char			**ft_strsplit(const char *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	int		l;
 	int		a;
