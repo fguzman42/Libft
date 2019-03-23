@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/09 17:45:02 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/22 18:16:21 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/22 18:18:51 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char			**ft_strsplit(char const *s, char c)
 		}
 		skip += (s[skip] == '\0' ? 0 : 1);
 	}
-	str[a] = (NULL);
+	str[a] = NULL;
 	return (str);
 }
 
