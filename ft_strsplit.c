@@ -6,13 +6,13 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/09 17:45:02 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/22 18:41:11 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/22 18:42:48 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*static int		wordlen(char const *s, char c)
+static int		wordlen(char const *s, char c)
 {
 	int i;
 
@@ -54,7 +54,7 @@ char			**ft_strsplit(char const *s, char c)
 	char	**str;
 
 	a = 0;
-	l = 0;
+	l = 3;
 	skip = 0;
 	if (!s)
 		return(NULL);
@@ -76,6 +76,3 @@ char			**ft_strsplit(char const *s, char c)
 	str[a] = NULL;
 	return (str);
 }
-*/
-int main(void)
-{}
