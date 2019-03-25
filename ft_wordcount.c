@@ -6,11 +6,10 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/14 13:50:40 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/23 19:10:20 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/24 16:53:33 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
 #include "libft.h"
 
 int	ft_wordcount(const char *s, char c)
@@ -20,13 +19,18 @@ int	ft_wordcount(const char *s, char c)
 
 	i = 0;
 	wc = 0;
+	while (s[i] == c)
+		i++;
 	while (s[i] != '\0')
 	{
-		while (s[i] == c)
+		if (s[i] != c)
 		{
-			i++;
-			if (s[i] != c)
-				wc++;
+			while (s[i] && s[i] != c)
+			{
+				i++;
+				if (s[i] == c || s[i] == '\0')
+					wc++;
+			}
 		}
 		if (s[i] == '\0')
 			break ;
@@ -36,4 +40,3 @@ int	ft_wordcount(const char *s, char c)
 		wc++;
 	return (wc);
 }
-*/
