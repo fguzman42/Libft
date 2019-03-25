@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordcount.c                                     :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/14 13:50:40 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/24 17:09:14 by fguzman          ###   ########.fr       */
+/*   Created: 2019/03/24 17:10:47 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/24 18:23:43 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_wordcount(const char *s, char c)
+char	*ft_strndup(const char *s1, size_t n)
 {
-	int wc;
-	int i;
+	int		i;
+	char	*str;
 
 	i = 0;
-	wc = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i] != '\0')
+	if (!(str = (char *)malloc(sizeof(char) * (n + 1))))
+		return (NULL);
+	if (n > ft_strlen(s1))
+		return (ft_strdup(s1));
+	while (s1[i] && n > 0)
 	{
-		if (s[i] != c)
-		{
-			while (s[i] && s[i] != c)
-			{
-				i++;
-				if (s[i] == c || s[i] == '\0')
-					wc++;
-			}
-		}
-		if (s[i] == '\0')
-			break ;
+		str[i] = s1[i];
 		i++;
+		n--;
 	}
-	if (wc == 0)
-		wc++;
-	return (wc);
+	str[i] = '\0';
+	return (str);
 }

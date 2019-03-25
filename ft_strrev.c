@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordcount.c                                     :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/14 13:50:40 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/24 17:09:14 by fguzman          ###   ########.fr       */
+/*   Created: 2019/03/24 18:31:56 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/24 19:01:58 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordcount(const char *s, char c)
-{
-	int wc;
-	int i;
+/*
+** ft_strrev returns a string with its characters reversed.
+** if the string is empty, it returns NULL
+*/
 
-	i = 0;
-	wc = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i] != '\0')
+char	*ft_strrev(char *s)
+{
+	char	*str;
+	int		i;
+	int		l;
+
+	l = 0;
+	i = (ft_strlen(s) - 1);
+	if (!(str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (NULL);
+	while (i >= 0)
 	{
-		if (s[i] != c)
-		{
-			while (s[i] && s[i] != c)
-			{
-				i++;
-				if (s[i] == c || s[i] == '\0')
-					wc++;
-			}
-		}
-		if (s[i] == '\0')
-			break ;
-		i++;
+		str[l] = s[i];
+		i--;
+		l++;
 	}
-	if (wc == 0)
-		wc++;
-	return (wc);
+	str[l] = '\0';
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 15:35:45 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/24 16:59:21 by fguzman          ###   ########.fr       */
+/*   Updated: 2019/03/24 20:24:50 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <stdio.h>
 # include <unistd.h>
 # include <string.h>
 
@@ -90,7 +91,7 @@ int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 
 /*
-** Unistd lib
+** Stdio lib
 */
 
 void				ft_putchar(char c);
@@ -118,5 +119,9 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 */
 
 int					ft_wordcount(const char *s, char c);
+char				*ft_strrev(char *s);
+char				*ft_strndup(const char *s1, size_t n);
+char				*ft_strupcase(char *s);
+char				*ft_strlowcase(char *s);
 
 #endif

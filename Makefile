@@ -6,7 +6,7 @@
 #    By: fguzman <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/19 15:43:44 by fguzman           #+#    #+#              #
-#    Updated: 2019/03/24 17:00:15 by fguzman          ###   ########.fr        #
+#    Updated: 2019/03/24 20:18:11 by fguzman          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,11 @@ SRC = ft_atoi.c \
 	  ft_strtrim.c \
 	  ft_tolower.c \
 	  ft_toupper.c \
-	  ft_wordcount.c
+	  ft_wordcount.c \
+	  ft_strndup.c \
+	  ft_strrev.c \
+	  ft_strupcase.c \
+	  ft_strlowcase.c 
 
 all:	$(NAME)
 

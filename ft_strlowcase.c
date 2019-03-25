@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wordcount.c                                     :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fguzman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/14 13:50:40 by fguzman           #+#    #+#             */
-/*   Updated: 2019/03/24 17:09:14 by fguzman          ###   ########.fr       */
+/*   Created: 2019/03/24 20:18:33 by fguzman           #+#    #+#             */
+/*   Updated: 2019/03/24 20:24:00 by fguzman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_wordcount(const char *s, char c)
+char	*ft_strlowcase(char *s)
 {
-	int wc;
 	int i;
 
 	i = 0;
-	wc = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i] != '\0')
+	while (s[i])
 	{
-		if (s[i] != c)
-		{
-			while (s[i] && s[i] != c)
-			{
-				i++;
-				if (s[i] == c || s[i] == '\0')
-					wc++;
-			}
-		}
-		if (s[i] == '\0')
-			break ;
+		if (s[i] >= 'A' && s[i] <= 'Z')
+			s[i] = s[i] + 32;
 		i++;
 	}
-	if (wc == 0)
-		wc++;
-	return (wc);
+	return (s);
 }
